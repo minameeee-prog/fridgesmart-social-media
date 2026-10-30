@@ -8,7 +8,7 @@ All clips are 590×1280, 30 fps, no audio. The old home screen and logo are alre
 |---|---|---|---|
 | `scan-menu.mp4` | 2.0s | "Your Items" menu: AI Full Fridge Scan / Quick Scan / Scan Receipt / Manual Entry | 1x |
 | `full-fridge-scan.mp4` | 10.0s | Camera on a real fridge → "Scanning your fridge…" (0–4s), then Confirm Items, 7 items detected with expiry dates (4–10s) | 3x, then 2x |
-| `quick-scan.mp4` | 10.0s | Saving → Quick Scan of a cheese pack → Analyzing… | 2x |
+| `quick-scan.mp4` | 10.0s | Your Items menu → Quick Scan of a cheese pack → Analyzing… → Confirm Items (2) → Success | 2x |
 | `full-demo-raw.mp4` | 22.0s | All of the above in order, ending on Confirm Items, 2 items, Success | mixed |
 | `live-demo-branded.mp4` | 25.0s | Finished post: phone frame, step captions, music, end card, cover as last 0.5s | — |
 | `still-scanning.png`, `still-confirm-items.png` | — | Stills for covers and carousels | — |
