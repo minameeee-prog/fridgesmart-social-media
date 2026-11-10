@@ -1,0 +1,321 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a2f31}
+body{font-family:Inter,'Noto Color Emoji',sans-serif;color:#fff;position:relative}
+.scene{position:absolute;inset:0;display:none;overflow:hidden}
+.bg{position:absolute;inset:0;background:radial-gradient(1000px 900px at 50% 58%,#1d8a8c 0%,rgba(29,138,140,0) 70%),linear-gradient(180deg,#0b3234 0%,#0f4446 55%,#0a2f31 100%)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.6px);background-size:30px 30px}
+.cap{position:absolute;left:60px;right:60px;font-family:Poppins;font-weight:800;letter-spacing:-1px;line-height:1.04;text-align:center}
+.cap em{font-style:normal;color:#ffb347}
+.kick{position:absolute;left:0;right:0;text-align:center;font-weight:800;font-size:30px;letter-spacing:4px;color:#8fd9d6}
+.emo{font-family:'Noto Color Emoji';line-height:1}
+.prog{position:absolute;left:70px;right:70px;top:110px;height:8px;border-radius:8px;background:rgba(255,255,255,.18);z-index:50}
+.prog div{height:100%;border-radius:8px;background:#ffb347;width:0}
+.lumi{position:absolute;border-radius:50%;overflow:hidden;border:10px solid #fbf3e4;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.lumi img{width:150%;margin-left:-25%;margin-top:-4%}
+.cta{position:absolute;left:50%;background:#ffb347;color:#1d2b2c;font-family:Poppins;font-weight:700;font-size:56px;padding:32px 76px;border-radius:80px;white-space:nowrap;box-shadow:0 16px 40px rgba(255,179,71,.35)}
+.phone{position:absolute;border-radius:70px;background:#0a0a0a;padding:14px;box-shadow:0 50px 100px rgba(0,0,0,.55),0 0 0 2px #2b2b2b inset}
+.scr{width:100%;height:100%;border-radius:56px;overflow:hidden;position:relative;background:#f4f6f3;color:#16393b}
+.hdr{background:#5b7f1e;color:#fff;padding:70px 34px 28px;font-family:Poppins;font-weight:700;font-size:40px}
+.hdr small{display:block;font-family:Inter;font-weight:600;font-size:22px;opacity:.85;margin-top:4px}
+.row{margin:18px 24px;background:#fff;border-radius:24px;padding:22px 26px;font-weight:700;font-size:32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.row small{display:block;font-size:22px;color:#6b7c7c;font-weight:600;margin-top:4px}
+.badge{background:#ffb347;color:#1d2b2c;font-weight:800;font-size:18px;letter-spacing:2px;border-radius:10px;padding:6px 10px}
+.btn{margin:26px 24px;background:#5b7f1e;color:#fff;border-radius:22px;padding:24px;text-align:center;font-weight:800;font-size:30px}
+.field{background:#fff;color:#16393b;border-radius:24px;padding:22px 26px;font-size:34px;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.3);margin-bottom:18px}
+.field .lbl{font-size:18px;font-weight:800;letter-spacing:2px;color:#8a9a99;margin-bottom:6px}
+.caret{display:inline-block;width:3px;height:36px;background:#1d8a8c;vertical-align:-6px;margin-left:3px}
+.tag{position:absolute;font-weight:800;font-size:26px;letter-spacing:3px;padding:10px 20px;border-radius:30px}
+.code{display:flex;gap:12px;justify-content:center;margin-top:40px}
+.code b{width:70px;height:92px;border-radius:18px;background:#fff;border:3px solid #cfd8cf;font-family:Poppins;font-size:54px;display:grid;place-items:center;color:#16393b}
+.bubble{position:absolute;background:#fbf3e4;color:#16393b;padding:22px 30px;border-radius:30px;font-weight:800;font-size:38px;box-shadow:0 16px 36px rgba(0,0,0,.35);white-space:nowrap}
+.qcard{position:absolute;left:90px;right:90px;top:560px;height:900px;border-radius:50px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.18)}
+.stamp{position:absolute;left:50%;top:1020px;transform:translateX(-50%);font-family:Poppins;font-weight:800;font-size:64px;padding:16px 40px;border-radius:24px;white-space:nowrap}
+.ok{background:#3bb273;color:#fff}.no{background:#e5534b;color:#fff}
+.why{position:absolute;left:150px;right:150px;top:1180px;text-align:center;font-size:40px;font-weight:700;line-height:1.3;color:#e8f4f3}
+.price{position:absolute;left:190px;right:190px;top:900px;padding:44px;border-radius:44px;background:#fbf3e4;color:#16393b;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+</style></head><body><div class='prog' id='prog'><div></div></div><style>
+.chatw{position:absolute;left:90px;right:90px;top:560px}
+.msg{display:flex;flex-direction:column;margin-bottom:26px}
+.msg .who{font-size:26px;font-weight:800;letter-spacing:2px;color:#8fd9d6;margin:0 0 8px 18px}
+.msg .b{align-self:flex-start;background:#fbf3e4;color:#16393b;font-weight:800;font-size:48px;padding:24px 34px;border-radius:36px 36px 36px 10px;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.msg.me{align-items:flex-end}.msg.me .who{margin:0 18px 8px 0}
+.msg.me .b{background:#ffb347;color:#1d2b2c;border-radius:36px 36px 10px 36px}
+.hook{position:absolute;left:60px;right:60px;text-align:center;font-family:Poppins;font-weight:800;letter-spacing:-1.5px;line-height:1.03}
+.hook em{font-style:normal;color:#ffb347}
+.chipq{position:absolute;background:#fff;color:#14383a;border-radius:24px;padding:16px 24px;font-weight:800;font-size:34px;box-shadow:0 16px 36px rgba(0,0,0,.35);white-space:nowrap}
+.bez{position:absolute;left:284px;top:514px;width:512px;height:1073px;border-radius:76px;background:#0a0a0a;box-shadow:0 50px 100px rgba(0,0,0,.55),0 0 0 2px #2b2b2b inset}
+.capx{position:absolute;left:60px;right:60px;top:250px;text-align:center;font-family:Poppins;font-weight:800;font-size:86px;line-height:1.05;letter-spacing:-1px}
+.capx em{font-style:normal;color:#ffb347}
+.rcpt{position:absolute;background:#fff;color:#16393b;border-radius:18px;padding:18px 30px;font-family:Poppins;font-weight:800;font-size:48px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.hab{position:absolute;left:90px;right:90px;top:520px;height:620px;border-radius:50px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.18)}
+.fix{position:absolute;left:110px;right:110px;top:1300px;padding:34px 40px;border-radius:36px;background:#fbf3e4;color:#16393b;font-size:44px;font-weight:700;line-height:1.3;text-align:center}
+.fix b{display:block;font-size:24px;letter-spacing:3px;color:#1d8a8c;margin-bottom:8px}
+.cvh{position:absolute;left:70px;right:70px;top:430px;text-align:center;font-family:Poppins;font-weight:800;line-height:1.0;letter-spacing:-2px;text-shadow:0 8px 30px rgba(0,0,0,.35)}
+.cvh em{font-style:normal;color:#ffb347}
+.cvbrand{position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center;align-items:center;gap:16px;font-family:Poppins;font-weight:700;font-size:34px}
+.cvbrand img{width:64px;height:64px;border-radius:16px;background:#fbf3e4}
+.strike{text-decoration:line-through;opacity:.45}
+</style>
+
+<!-- ===== V10: QUICK SCAN STORY ===== -->
+<div class="scene" id="s1"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:330px">EVERY. SINGLE. WEEK.</div>
+ <div class="hook" style="top:400px;font-size:122px">“When did we <em>open this?</em>” <span class="emo">🤨</span></div>
+ <div class="emo" id="jar" style="position:absolute;left:0;right:0;top:1050px;text-align:center;font-size:300px">🫙</div>
+ <div class="chipq q1" style="left:120px;top:1000px;transform:rotate(-6deg)">Opened: ???</div>
+ <div class="chipq q2" style="left:640px;top:1300px;transform:rotate(5deg)">Expires: ???</div>
+</div>
+<div class="scene" id="s2"><div class="bg"></div><div class="dots"></div>
+ <div class="capx" id="s2cap">Point it at the item <span class="emo">📸</span></div>
+ <div class="bez"></div>
+ <div style="position:absolute;left:0;right:0;top:1620px;text-align:center;font-size:30px;color:#8fd9d6;font-weight:700;letter-spacing:2px">REAL APP · QUICK SCAN · SPED UP</div>
+</div>
+<div class="scene" id="s3"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:420px;font-size:112px">Now your fridge remembers. <em>So you don't have to.</em></div>
+ <div class="chipq rm" style="left:200px;top:1080px;font-size:42px;padding:24px 34px">⏰ Cheddar expires in 2 days</div>
+ <div class="lumi" style="width:300px;height:300px;left:390px;top:1300px"><img src="chef-lumi-avatar.png"></div>
+</div>
+<div class="scene" id="cv_scan"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:124px">“When did we <em>open this?</em>”</div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:960px;text-align:center;font-size:340px">🫙</div>
+ <div class="chipq" style="left:190px;top:1420px;font-size:44px;padding:24px 36px;transform:rotate(-3deg)">📸 Scan it once. Know forever.</div>
+</div>
+
+<!-- ===== V11: CHEF LUMI ===== -->
+<div class="scene" id="u1"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:300px">THE FRIDGE:</div>
+ <div class="emo" id="items" style="position:absolute;left:0;right:0;top:370px;text-align:center;font-size:150px;letter-spacing:12px">🥚🥬🧀🫓🍗</div>
+ <div class="kick" style="top:700px">ME:</div>
+ <div class="hook" style="top:770px;font-size:118px">“There's <em>nothing</em> to eat.” <span class="emo">😩</span></div>
+</div>
+<div class="scene" id="u2"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:250px">ASK CHEF LUMI</div>
+ <div class="lumi" style="width:360px;height:360px;left:360px;top:340px"><img src="chef-lumi-avatar.png"></div>
+ <div class="chatw" style="top:800px">
+  <div class="msg"><div class="b u2a">You've got eggs, spinach, cheese and tortillas.</div></div>
+  <div class="msg"><div class="b u2b">🔥 Spinach &amp; egg quesadillas. 15 minutes.</div></div>
+  <div class="msg me"><div class="b u2c">…okay that's actually dinner.</div></div>
+ </div>
+</div>
+<div class="scene" id="u3"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:460px;font-size:118px">Dinner, sorted. <em>From what you already have.</em></div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:1150px;text-align:center;font-size:260px">🍳</div>
+</div>
+<div class="scene" id="cv_lumi"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:118px">Full fridge. <em>“Nothing to eat.”</em></div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:880px;text-align:center;font-size:150px;letter-spacing:10px">🥚🥬🧀🫓</div>
+ <div class="lumi" style="width:380px;height:380px;left:350px;top:1120px"><img src="chef-lumi-avatar.png"></div>
+</div>
+
+<!-- ===== V12: LIFETIME STORY ===== -->
+<div class="scene" id="m1"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:300px;font-size:112px">Me, paying for the same app <em>every month</em> <span class="emo">😩</span></div>
+ <div class="rcpt r" style="left:150px;top:900px;transform:rotate(-8deg)">$4.99</div>
+ <div class="rcpt r" style="left:600px;top:980px;transform:rotate(6deg)">$4.99</div>
+ <div class="rcpt r" style="left:260px;top:1180px;transform:rotate(4deg)">$4.99</div>
+ <div class="rcpt r" style="left:640px;top:1300px;transform:rotate(-5deg)">$4.99</div>
+ <div class="rcpt r" style="left:180px;top:1450px;transform:rotate(-2deg)">$4.99</div>
+</div>
+<div class="scene" id="m2"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:420px">3 YEARS OF MONTHLY FRIDGESMART+</div>
+ <div id="tot" style="position:absolute;left:0;right:0;top:520px;text-align:center;font-family:Poppins;font-weight:800;font-size:250px;color:#ffb347;letter-spacing:-8px">$0</div>
+ <div class="hook" style="top:900px;font-size:64px;font-family:Inter;font-weight:700;color:#cfe6e4">36 payments of $4.99</div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:1150px;text-align:center;font-size:220px">💸</div>
+</div>
+<div class="scene" id="m3"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:300px;font-size:104px">Or pay once. <em>Keep it for life.</em></div>
+ <div class="price"><div style="font-weight:800;font-size:28px;letter-spacing:3px;color:#1d8a8c">FOUNDER'S LIFETIME</div>
+  <div style="font-family:Poppins;font-weight:800;font-size:170px;letter-spacing:-6px;line-height:1.05">$99.99</div>
+  <div style="font-weight:700;font-size:36px;color:#4f6b6c">One payment. Every FridgeSmart+ benefit. No renewals.</div></div>
+</div>
+<div class="scene" id="m4"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:520px">LIMITED TIME</div>
+ <div class="hook" style="top:600px;font-size:116px">Ends <em>Cyber Monday</em></div>
+ <div class="hook" style="top:900px;font-size:60px;font-family:Inter;font-weight:700;color:#cfe6e4">Nov 30 · 11:59 PM ET</div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:1150px;text-align:center;font-size:240px">⏳</div>
+</div>
+<div class="scene" id="cv_lifestory"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:122px">Stop paying <em>every month.</em></div>
+ <div class="price" style="top:960px"><div style="font-weight:800;font-size:28px;letter-spacing:3px;color:#1d8a8c">PAY ONCE</div>
+  <div style="font-family:Poppins;font-weight:800;font-size:170px;letter-spacing:-6px;line-height:1.05">$99.99</div>
+  <div style="font-weight:700;font-size:36px;color:#4f6b6c">Ends Cyber Monday</div></div>
+</div>
+
+<!-- ===== V13: WHO ATE THE YOGURT ===== -->
+<div class="scene" id="y1"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:300px">THE FAMILY GROUP CHAT 🏠</div>
+ <div class="hook" style="top:360px;font-size:96px">Who ate <em>my yogurt??</em></div>
+ <div class="chatw" style="top:700px">
+  <div class="msg"><div class="who">DAD</div><div class="b y">not me</div></div>
+  <div class="msg"><div class="who">SAM</div><div class="b y">not me 👀</div></div>
+  <div class="msg"><div class="who">MAYA</div><div class="b y">wasn't me</div></div>
+  <div class="msg"><div class="who">THE DOG</div><div class="b y">🐶 …</div></div>
+ </div>
+</div>
+<div class="scene" id="y2"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:200px">FAMILY FRIDGE</div>
+ <div class="cap" style="top:250px;font-size:84px">Everyone sees <em>the same fridge</em></div>
+ <div class="phone" style="left:240px;top:520px;width:600px;height:1300px"><div class="scr">
+  <div class="hdr">My Fridge<small>Shared with 4 people</small></div>
+  <div class="row sh"><div>🥛 Milk<small>Expires in 3 days</small></div><span class="badge">SHARED</span></div>
+  <div class="row sh"><div>🥚 Eggs<small>Expires in 12 days</small></div><span class="badge">SHARED</span></div>
+  <div class="row sh" id="yog"><div>🥄 Yogurt<small id="yogs">Expires in 4 days</small></div><span class="badge">SHARED</span></div>
+ </div></div>
+ <div class="bubble" id="gone" style="left:150px;top:1560px">✅ Finished it? It's off the list.</div>
+</div>
+<div class="scene" id="y3"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:480px;font-size:112px">No more mysteries. <em>No more double milk.</em></div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:1150px;text-align:center;font-size:240px">🥛</div>
+</div>
+<div class="scene" id="cv_yogurt"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:132px">Who ate <em>my yogurt??</em></div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:960px;text-align:center;font-size:320px">🥄👀</div>
+ <div class="chipq" style="left:250px;top:1400px;font-size:44px;padding:24px 36px;transform:rotate(-3deg)">🐶 wasn't me</div>
+</div>
+
+<!-- ===== V14: HABITS TO QUIT ===== -->
+<div class="scene" id="h0"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:380px">THE USDA SAYS STOP</div>
+ <div class="hook" style="top:450px;font-size:124px">4 kitchen habits <em>to quit</em> <span class="emo">😬</span></div>
+ <div class="hook" style="top:950px;font-size:56px;font-family:Inter;font-weight:700;color:#cfe6e4">How many do you do?</div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:1180px;text-align:center;font-size:230px">🙈</div>
+</div>
+<div class="scene hb" id="h1"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:250px">1 / 4</div><div class="cap" style="top:300px;font-size:88px">Thawing meat <em>on the counter</em></div>
+ <div class="hab"></div><div class="emo hi" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-size:300px">🥩</div>
+ <div class="stamp no" style="top:1080px">✕ QUIT IT</div>
+ <div class="fix"><b>INSTEAD</b>Thaw it in the fridge, in cold water or in the microwave.</div></div>
+<div class="scene hb" id="h2"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:250px">2 / 4</div><div class="cap" style="top:300px;font-size:88px">Washing <em>raw chicken</em></div>
+ <div class="hab"></div><div class="emo hi" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-size:300px">🍗</div>
+ <div class="stamp no" style="top:1080px">✕ QUIT IT</div>
+ <div class="fix"><b>INSTEAD</b>Rinsing splashes germs around. Cooking it to 165°F kills them.</div></div>
+<div class="scene hb" id="h3"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:250px">3 / 4</div><div class="cap" style="top:300px;font-size:88px">Leftovers out <em>overnight</em></div>
+ <div class="hab"></div><div class="emo hi" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-size:300px">🍕</div>
+ <div class="stamp no" style="top:1080px">✕ QUIT IT</div>
+ <div class="fix"><b>INSTEAD</b>Get them in the fridge within 2 hours.</div></div>
+<div class="scene hb" id="h4"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:250px">4 / 4</div><div class="cap" style="top:300px;font-size:88px">Eggs in the <em>fridge door</em></div>
+ <div class="hab"></div><div class="emo hi" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-size:300px">🥚</div>
+ <div class="stamp no" style="top:1080px">✕ QUIT IT</div>
+ <div class="fix"><b>INSTEAD</b>Keep them in the carton on a shelf. The door is the warmest spot.</div></div>
+<div class="scene" id="h5"><div class="bg"></div><div class="dots"></div>
+ <div class="hook" style="top:430px;font-size:100px">Next habit to quit: <em>forgetting what's in there.</em></div>
+ <div class="hook" style="top:900px;font-size:46px;font-family:Inter;font-weight:600;color:#cfe6e4">FridgeSmart tracks every item and reminds you before it expires.</div>
+ <div class="lumi" style="width:340px;height:340px;left:370px;top:1150px"><img src="chef-lumi-avatar.png"></div>
+ <div style="position:absolute;left:0;right:0;bottom:120px;text-align:center;font-size:24px;color:#8fd9d6;font-weight:600">Food safety guidance: USDA FSIS</div>
+</div>
+<div class="scene" id="cv_habits"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:128px">4 kitchen habits <em>to quit</em></div>
+ <div class="emo" style="position:absolute;left:0;right:0;top:930px;text-align:center;font-size:190px;letter-spacing:16px">🥩🍗🍕🥚</div>
+ <div class="stamp no" style="top:1260px">✕ QUIT IT</div>
+</div>
+
+<!-- ===== V15: LIFETIME 15 DAYS ===== -->
+<div class="scene" id="l1"><div class="bg"></div><div class="dots"></div>
+ <div class="kick" style="top:330px">FOUNDER'S LIFETIME</div>
+ <div class="cap" style="top:400px;font-size:100px">Days left to get it:</div>
+ <div id="days" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-family:Poppins;font-weight:800;font-size:520px;line-height:1;color:#ffb347;letter-spacing:-20px">18</div>
+ <div class="cap" style="top:1300px;font-size:52px;font-weight:700;font-family:Inter;color:#cfe6e4">Ends Cyber Monday, Nov 30</div>
+</div>
+<div class="scene" id="l2"><div class="bg"></div><div class="dots"></div>
+ <div class="cap" style="top:300px;font-size:104px">Pay once. <em>Use it for life.</em></div>
+ <div class="price"><div style="font-weight:800;font-size:28px;letter-spacing:3px;color:#1d8a8c">ONE-TIME PAYMENT</div>
+  <div style="font-family:Poppins;font-weight:800;font-size:170px;letter-spacing:-6px;line-height:1.05">$99.99</div>
+  <div style="font-weight:700;font-size:36px;color:#4f6b6c">Every FridgeSmart+ benefit. No renewals.</div></div>
+ <div class="field lc" style="position:absolute;left:190px;right:190px;top:1400px;background:rgba(255,255,255,.12);color:#e8f2f1;text-align:center">Monthly: $59.88 every year</div>
+ <div class="field lc" style="position:absolute;left:190px;right:190px;top:1540px;background:rgba(255,255,255,.12);color:#e8f2f1;text-align:center">Annual: $39.99 every year</div>
+</div>
+<div class="scene" id="cv_life15"><div class="bg"></div><div class="dots"></div>
+ <div class="cvbrand"><img src="icon.png">FridgeSmart</div>
+ <div class="cvh" style="font-size:118px">Founder's Lifetime: <em>15 days left</em></div>
+ <div style="position:absolute;left:0;right:0;top:880px;text-align:center;font-family:Poppins;font-weight:800;font-size:480px;line-height:1;color:#ffb347;letter-spacing:-18px">15</div>
+ <div class="chipq" style="left:250px;top:1440px;font-size:44px;padding:24px 36px">$99.99 once · Ends Nov 30</div>
+</div>
+<!-- ===== END CARDS ===== -->
+<div class="scene" id="end"><div class="bg"></div><div class="dots"></div>
+ <img id="logo" src="icon.png" style="position:absolute;width:360px;height:360px;left:360px;top:470px;border-radius:80px;background:#fbf3e4;box-shadow:0 30px 70px rgba(0,0,0,.45)">
+ <div class="cap" style="top:900px;font-size:110px">FridgeSmart</div>
+ <div class="kick ek" style="top:1040px;font-size:34px">SCAN. TRACK. COOK.</div>
+ <div class="cta" style="top:1190px">Download free</div>
+ <div id="stores" style="position:absolute;top:1370px;left:0;right:0;text-align:center;font-size:36px;color:#d6ecea;font-weight:600">App Store · Google Play</div>
+ <div class="lumi" style="width:230px;height:230px;left:780px;top:1560px"><img src="chef-lumi-avatar.png"></div>
+</div>
+<div class="scene" id="lend"><div class="bg"></div><div class="dots"></div>
+ <img id="logo2" src="icon.png" style="position:absolute;width:300px;height:300px;left:390px;top:420px;border-radius:70px;background:#fbf3e4;box-shadow:0 30px 70px rgba(0,0,0,.45)">
+ <div class="cap" style="top:800px;font-size:100px">Get <em>Lifetime</em></div>
+ <div class="cta" style="top:1000px">fridgesmartapp.com</div>
+ <div id="stores2" style="position:absolute;top:1190px;left:0;right:0;text-align:center;font-size:38px;color:#d6ecea;font-weight:700;line-height:1.4">$99.99 once · Ends Nov 30, 11:59 PM ET</div>
+ <div class="lumi" style="width:230px;height:230px;left:780px;top:1560px"><img src="chef-lumi-avatar.png"></div>
+</div>
+
+<script>const MODE=location.hash.slice(1)||'scan';
+const SETS={
+ scan:[["s1",0,2.8],["s2",2.8,9.8],["s3",9.8,12.3],["end",12.3,15.9],["cv_scan",15.9,16.4]],
+ lumi:[["u1",0,3.0],["u2",3.0,8.0],["u3",8.0,10.4],["end",10.4,14.0],["cv_lumi",14.0,14.5]],
+ lifestory:[["m1",0,3.0],["m2",3.0,6.4],["m3",6.4,9.8],["m4",9.8,12.2],["lend",12.2,16.0],["cv_lifestory",16.0,16.5]],
+ yogurt:[["y1",0,4.0],["y2",4.0,8.6],["y3",8.6,10.8],["end",10.8,14.4],["cv_yogurt",14.4,14.9]],
+ habits:[["h0",0,2.6],["h1",2.6,5.4],["h2",5.4,8.2],["h3",8.2,11.0],["h4",11.0,13.8],["h5",13.8,16.4],["end",16.4,20.0],["cv_habits",20.0,20.5]],
+ life15:[["l1",0,3.6],["l2",3.6,8.4],["lend",8.4,12.5],["cv_life15",12.5,13.0]]};
+const S=SETS[MODE]; const TOTAL=S[S.length-1][2]; const ENDAT=S[S.length-2][1];
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const $=(q,r=document)=>r.querySelector(q);
+const $$=(q,r=document)=>[...r.querySelectorAll(q)];
+function enter(el,lt,st,d,dy=60){if(!el)return;const p=eo((lt-st)/d);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;}
+function popin(el,lt,st,d=0.45,base=''){if(!el)return;const p=back((lt-st)/d);el.style.opacity=cl((lt-st)/0.15);el.style.transform=`${base} scale(${0.6+0.4*p})`;}
+function hook(el,lt){ // visible from frame 0, tiny punch-in
+  const p=eo(lt/0.35); el.style.opacity=1; el.style.transform=`scale(${1.06-0.06*p})`;}
+function phoneIn(el,lt){const ph=$('.phone',el);if(!ph)return;const pp=eo((lt-0.1)/0.5);ph.style.transform=`translateY(${(1-pp)*600}px)`;}
+function render(t){
+ $('#prog div').style.width=(cl(t/ENDAT)*100)+'%'; $('#prog').style.opacity=t<ENDAT?1:0;
+ for(const el of $$('.scene')) el.style.display='none';
+ for(const [id,a,b] of S){
+  const el=document.getElementById(id); const on=t>=a&&t<b; if(!on)continue; el.style.display='block';
+  const lt=t-a,d=b-a; const last=(id==='end'||id==='lend'||id.startsWith('cv_')); el.style.opacity=last?1:cl((d-lt)/0.2);
+  if(id.startsWith('cv_')) continue;
+  if(id==='s1'){ $$('.hook,.kick',el).forEach(x=>hook(x,lt)); popin($('#jar'),lt,-0.3,0.5); $('#jar').style.transform+=` rotate(${Math.sin(lt*6)*6}deg)`;
+    popin($('.q1',el),lt,0.3,0.4,'rotate(-6deg)'); popin($('.q2',el),lt,0.6,0.4,'rotate(5deg)'); }
+  if(id==='s2'){ const c=$('#s2cap'); const caps=['Point it at the item <span class="emo">📸</span>','AI reads what it is <span class="emo">🤖</span>','Expiry date added <span class="emo">✅</span>'];
+    const k=lt<1.7?0:lt<3.1?1:2; c.innerHTML=caps[k]; const st=[0,1.7,3.1][k]; enter(c,lt,st,0.3,30);
+    const bz=$('.bez',el); const pp=eo(lt/0.4); bz.style.opacity=1; }
+  if(id==='s3'){ enter($('.hook',el),lt,0.0,0.4,50); popin($('.rm',el),lt,0.6,0.45); popin($('.lumi',el),lt,0.9,0.5); }
+  if(id==='u1'){ $$('.hook,.kick',el).forEach(x=>hook(x,lt)); const it=$('#items'); it.style.opacity=1; it.style.transform=`scale(${1.05-0.05*eo(lt/0.4)}) rotate(${Math.sin(lt*3)*1.5}deg)`; }
+  if(id==='u2'){ enter($('.kick',el),lt,0,0.3,30); popin($('.lumi',el),lt,0.1,0.45); enter($('.u2a',el),lt,0.6,0.35,40); enter($('.u2b',el),lt,1.8,0.35,40); enter($('.u2c',el),lt,3.2,0.35,40); }
+  if(id==='u3'){ enter($('.hook',el),lt,0,0.4,50); popin($('.emo',el),lt,0.5,0.5); }
+  if(id==='m1'){ hook($('.hook',el),lt); $$('.r',el).forEach((x,i)=>popin(x,lt,-0.2+i*0.45,0.35,`rotate(${[-8,6,4,-5,-2][i]}deg)`)); }
+  if(id==='m2'){ enter($('.kick',el),lt,0,0.3,30); const n=Math.round(36*eo((lt-0.2)/1.8)); $('#tot').textContent='$'+(n*4.99).toFixed(2);
+    const p=back((lt-2.0)/0.35); $('#tot').style.transform=`scale(${lt>2.0?0.9+0.1*p:1})`; enter($('.hook',el),lt,0.3,0.4,30); popin($('.emo',el),lt,1.4,0.45); }
+  if(id==='m3'){ enter($('.hook',el),lt,0,0.4,50); popin($('.price',el),lt,0.5,0.5); }
+  if(id==='m4'){ enter($('.kick',el),lt,0,0.3,30); enter($$('.hook',el)[0],lt,0.1,0.4,50); enter($$('.hook',el)[1],lt,0.5,0.4,30); popin($('.emo',el),lt,0.8,0.45); }
+  if(id==='y1'){ hook($('.hook',el),lt); hook($('.kick',el),lt); $$('.y',el).forEach((x,i)=>{popin(x,lt,0.15+i*0.75,0.35); x.parentElement.querySelector('.who').style.opacity=cl((lt-0.15-i*0.75)/0.15);}); }
+  if(id==='y2'){ enter($('.kick',el),lt,0,0.3,30); enter($('.cap',el),lt,0.05,0.4,40); phoneIn(el,lt); $$('.sh',el).forEach((x,i)=>enter(x,lt,0.6+i*0.25,0.35,40));
+    const done=lt>2.4; $('#yog').classList.toggle('strike',done); $('#yogs').textContent=done?'Used up':'Expires in 4 days'; popin($('#gone'),lt,2.7,0.45,'rotate(-3deg)'); }
+  if(id==='y3'){ enter($('.hook',el),lt,0,0.4,50); popin($('.emo',el),lt,0.5,0.5); }
+  if(id==='h0'){ $$('.hook,.kick',el).forEach(x=>hook(x,lt)); popin($('.emo',el),lt,0.3,0.45); }
+  if(el.classList.contains('hb')){ enter($('.kick',el),lt,0,0.3,30); enter($('.cap',el),lt,0.05,0.35,40); popin($('.hi',el),lt,0.15,0.45);
+    const st=$('.stamp',el); const p=back((lt-0.9)/0.35); st.style.opacity=cl((lt-0.9)/0.1); st.style.transform=`translateX(-50%) rotate(-6deg) scale(${1.6-0.6*p})`;
+    enter($('.fix',el),lt,1.2,0.35,30); }
+  if(id==='h5'){ enter($$('.hook',el)[0],lt,0,0.4,50); enter($$('.hook',el)[1],lt,0.4,0.4,30); popin($('.lumi',el),lt,0.8,0.5); }
+  if(id==='l1'){ $('.kick',el).style.opacity=1; hook($('.cap',el),lt);
+    const n=Math.round(18-3*eo((lt-0.2)/1.2)); const dd=$('#days'); dd.textContent=n; const p=back((lt-1.9)/0.4); dd.style.transform=`scale(${lt>1.9?0.85+0.15*p:1})`; enter($$('.cap',el)[1],lt,2.0,0.4,30); }
+  if(id==='l2'){ enter($('.cap',el),lt,0.05,0.45,50); popin($('.price',el),lt,0.5,0.5); $$('.lc',el).forEach((x,i)=>enter(x,lt,1.6+i*0.35,0.4,40)); }
+  if(id==='end'){ const pl=back(lt/0.6); $('#logo').style.transform=`scale(${0.5+0.5*pl})`; $('#logo').style.opacity=cl(lt/0.2);
+    enter($('.cap',el),lt,0.3,0.5,50); enter($('.ek',el),lt,0.45,0.5,30);
+    const c=$('.cta',el); const pc=back((lt-0.7)/0.5); c.style.opacity=cl((lt-0.7)/0.2); c.style.transform=`translateX(-50%) scale(${(0.6+0.4*pc)*(1+0.03*Math.sin(Math.max(0,lt-1.3)*6))})`;
+    enter($('#stores'),lt,0.9,0.5,30); popin($('.lumi',el),lt,1.0,0.5); }
+  if(id==='lend'){ const pl=back(lt/0.6); $('#logo2').style.transform=`scale(${0.5+0.5*pl})`; $('#logo2').style.opacity=cl(lt/0.2);
+    enter($('.cap',el),lt,0.3,0.5,50); const c=$('.cta',el); const pc=back((lt-0.7)/0.5); c.style.opacity=cl((lt-0.7)/0.2); c.style.transform=`translateX(-50%) scale(${(0.6+0.4*pc)*(1+0.03*Math.sin(Math.max(0,lt-1.3)*6))})`;
+    enter($('#stores2'),lt,0.9,0.5,30); popin($('.lumi',el),lt,1.0,0.5); }
+ }
+}
+window.render=render; render(0);
+</script></body></html>
