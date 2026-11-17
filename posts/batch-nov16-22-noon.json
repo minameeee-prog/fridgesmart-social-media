@@ -350,7 +350,8 @@
     "shouldShareToFeed": true
    }
   },
-  "queued": true
+  "queued": true,
+  "replaced_by_reel": true
  },
  {
   "day": "18",
@@ -459,7 +460,8 @@
     "shouldShareToFeed": true
    }
   },
-  "queued": true
+  "queued": true,
+  "replaced_by_reel": true
  },
  {
   "day": "19",
@@ -552,7 +554,8 @@
     "shouldShareToFeed": true
    }
   },
-  "queued": true
+  "queued": true,
+  "replaced_by_reel": true
  },
  {
   "day": "20",
@@ -668,7 +671,9 @@
     "type": "post",
     "shouldShareToFeed": true
    }
-  }
+  },
+  "queued": true,
+  "replaced_by_reel": true
  },
  {
   "day": "21",
@@ -807,7 +812,9 @@
     "type": "post",
     "shouldShareToFeed": true
    }
-  }
+  },
+  "queued": true,
+  "replaced_by_reel": true
  },
  {
   "day": "22",
