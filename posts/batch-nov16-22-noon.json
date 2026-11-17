@@ -818,6 +818,30 @@
  },
  {
   "day": "22",
+  "channelId": "6aa73d44ea19ca0bde3a2b2f",
+  "dueAt": "2026-11-22T12:00:00-05:00",
+  "text": "5 meals from leftover turkey 🦃 Save this for Friday. Which one are you making?\n\n🔗 Download links in bio\n\n#Thanksgiving #Leftovers #EasyDinners #FridgeSmart",
+  "assets": [
+   {
+    "video": {
+     "url": "https://tjhhdascrwfzsuiyneyd.supabase.co/storage/v1/object/sign/buffer-automation-media/buffer/2026-11-17/b1691db0-cc9a-47a2-9a9e-a5bec67919d8-reel-leftover-turkey-meals.mp4?token=eyJraWQiOiJhYmE5MzRiOC1kOTViLTQ1YjEtODg4MS1jYWQ2ZjBjODE1ZGMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJidWZmZXItYXV0b21hdGlvbi1tZWRpYS9idWZmZXIvMjAyNi0xMS0xNy9iMTY5MWRiMC1jYzlhLTQ3YTItOWE5ZS1hNWJlYzY3OTE5ZDgtcmVlbC1sZWZ0b3Zlci10dXJrZXktbWVhbHMubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5NDk0NDQ5NSwiZXhwIjoxNzk2MTU0MDk1fQ.vvbdnxhumWcRE2whNXEbH7REqrljWtJtlqfZU-JyxsU",
+     "metadata": {
+      "thumbnailOffset": 24250
+     }
+    }
+   }
+  ],
+  "metadata": {
+   "instagram": {
+    "type": "reel",
+    "shouldShareToFeed": true,
+    "isAiGenerated": false
+   }
+  },
+  "queued": false
+ },
+ {
+  "day": "22",
   "channelId": "6aa73d68ea19ca0bde3a2bb5",
   "dueAt": "2026-11-22T12:00:00-05:00",
   "text": "1 rotisserie chicken = 5 dinners 🍗 Save this for your next grocery run.\n\n🌐: https://fridgesmartapp.com\n\n📱: https://apps.apple.com/app/id6755790933\n\n🤖: https://play.google.com/store/apps/details?id=com.minafakhri.fridgesmart\n\n#MealPrep #EasyDinners #FoodWaste #FridgeSmart",
@@ -892,5 +916,29 @@
     "title": "1 rotisserie chicken, 5 dinners"
    }
   }
+ },
+ {
+  "day": "22",
+  "channelId": "6aa73dc5ea19ca0bde3a2cfc",
+  "dueAt": "2026-11-22T12:00:00-05:00",
+  "text": "5 meals from leftover turkey 🦃 Save this for Friday. Which one are you making?\n\n🌐: https://fridgesmartapp.com\n\n📱: https://apps.apple.com/app/id6755790933\n\n🤖: https://play.google.com/store/apps/details?id=com.minafakhri.fridgesmart\n\n#Thanksgiving #Leftovers #EasyDinners #FridgeSmart #Shorts",
+  "assets": [
+   {
+    "video": {
+     "url": "https://tjhhdascrwfzsuiyneyd.supabase.co/storage/v1/object/sign/buffer-automation-media/buffer/2026-11-17/b1691db0-cc9a-47a2-9a9e-a5bec67919d8-reel-leftover-turkey-meals.mp4?token=eyJraWQiOiJhYmE5MzRiOC1kOTViLTQ1YjEtODg4MS1jYWQ2ZjBjODE1ZGMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJidWZmZXItYXV0b21hdGlvbi1tZWRpYS9idWZmZXIvMjAyNi0xMS0xNy9iMTY5MWRiMC1jYzlhLTQ3YTItOWE5ZS1hNWJlYzY3OTE5ZDgtcmVlbC1sZWZ0b3Zlci10dXJrZXktbWVhbHMubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5NDk0NDQ5NSwiZXhwIjoxNzk2MTU0MDk1fQ.vvbdnxhumWcRE2whNXEbH7REqrljWtJtlqfZU-JyxsU",
+     "metadata": {
+      "thumbnailOffset": 24250
+     }
+    }
+   }
+  ],
+  "metadata": {
+   "youtube": {
+    "title": "5 meals from leftover turkey 🦃",
+    "categoryId": "26",
+    "isAiGenerated": false
+   }
+  },
+  "queued": false
  }
 ]
