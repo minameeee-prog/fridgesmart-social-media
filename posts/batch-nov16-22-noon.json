@@ -940,5 +940,72 @@
    }
   },
   "queued": false
+ },
+ {
+  "day": "23",
+  "channelId": "6aa73d44ea19ca0bde3a2b2f",
+  "dueAt": "2026-11-23T19:30:00-05:00",
+  "text": "FridgeSmart saved my leftovers 🥡 Snap your fridge and every item gets an expiry date, so nothing gets forgotten in the back. Download it now 👇\n\n🔗 Download links in bio\n\n#Leftovers #FoodWaste #KitchenHacks #FridgeSmart",
+  "assets": [
+   {
+    "video": {
+     "url": "https://tjhhdascrwfzsuiyneyd.supabase.co/storage/v1/object/sign/buffer-automation-media/buffer/2026-11-18/fea42549-6f5a-477a-a614-2fb5734e17dd-meta-saved-leftovers.mp4?token=eyJraWQiOiJhYmE5MzRiOC1kOTViLTQ1YjEtODg4MS1jYWQ2ZjBjODE1ZGMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJidWZmZXItYXV0b21hdGlvbi1tZWRpYS9idWZmZXIvMjAyNi0xMS0xOC9mZWE0MjU0OS02ZjVhLTQ3N2EtYTYxNC0yZmI1NzM0ZTE3ZGQtbWV0YS1zYXZlZC1sZWZ0b3ZlcnMubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5NDk2MjkzOSwiZXhwIjoxNzk2MTcyNTM5fQ.NsH1OVUn2JYJbydcv38dWIp2BP8iTyWA8heBSyOjJkU",
+     "metadata": {
+      "thumbnailOffset": 10183
+     }
+    }
+   }
+  ],
+  "metadata": {
+   "instagram": {
+    "type": "reel",
+    "shouldShareToFeed": true,
+    "isAiGenerated": true
+   }
+  },
+  "queued": false
+ },
+ {
+  "day": "23",
+  "channelId": "6aa73d68ea19ca0bde3a2bb5",
+  "dueAt": "2026-11-23T19:30:00-05:00",
+  "text": "(scheduled)",
+  "assets": [
+   {
+    "video": {
+     "url": "https://tjhhdascrwfzsuiyneyd.supabase.co/storage/v1/object/sign/buffer-automation-media/buffer/2026-11-18/fea42549-6f5a-477a-a614-2fb5734e17dd-meta-saved-leftovers.mp4?token=eyJraWQiOiJhYmE5MzRiOC1kOTViLTQ1YjEtODg4MS1jYWQ2ZjBjODE1ZGMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJidWZmZXItYXV0b21hdGlvbi1tZWRpYS9idWZmZXIvMjAyNi0xMS0xOC9mZWE0MjU0OS02ZjVhLTQ3N2EtYTYxNC0yZmI1NzM0ZTE3ZGQtbWV0YS1zYXZlZC1sZWZ0b3ZlcnMubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5NDk2MjkzOSwiZXhwIjoxNzk2MTcyNTM5fQ.NsH1OVUn2JYJbydcv38dWIp2BP8iTyWA8heBSyOjJkU",
+     "metadata": {
+      "thumbnailOffset": 10183
+     }
+    }
+   }
+  ],
+  "metadata": {},
+  "queued": true,
+  "post_id": "6afcf612fc933ac285b302fd"
+ },
+ {
+  "day": "23",
+  "channelId": "6aa73dc5ea19ca0bde3a2cfc",
+  "dueAt": "2026-11-23T19:30:00-05:00",
+  "text": "FridgeSmart saved my leftovers 🥡 Snap your fridge and every item gets an expiry date, so nothing gets forgotten in the back. Download it now 👇\n\n🌐: https://fridgesmartapp.com\n\n📱: https://apps.apple.com/app/id6755790933\n\n🤖: https://play.google.com/store/apps/details?id=com.minafakhri.fridgesmart\n\n#Leftovers #FoodWaste #KitchenHacks #FridgeSmart #Shorts",
+  "assets": [
+   {
+    "video": {
+     "url": "https://tjhhdascrwfzsuiyneyd.supabase.co/storage/v1/object/sign/buffer-automation-media/buffer/2026-11-18/fea42549-6f5a-477a-a614-2fb5734e17dd-meta-saved-leftovers.mp4?token=eyJraWQiOiJhYmE5MzRiOC1kOTViLTQ1YjEtODg4MS1jYWQ2ZjBjODE1ZGMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJidWZmZXItYXV0b21hdGlvbi1tZWRpYS9idWZmZXIvMjAyNi0xMS0xOC9mZWE0MjU0OS02ZjVhLTQ3N2EtYTYxNC0yZmI1NzM0ZTE3ZGQtbWV0YS1zYXZlZC1sZWZ0b3ZlcnMubXA0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5NDk2MjkzOSwiZXhwIjoxNzk2MTcyNTM5fQ.NsH1OVUn2JYJbydcv38dWIp2BP8iTyWA8heBSyOjJkU",
+     "metadata": {
+      "thumbnailOffset": 10183
+     }
+    }
+   }
+  ],
+  "metadata": {
+   "youtube": {
+    "title": "FridgeSmart saved my leftovers 🥡",
+    "categoryId": "26",
+    "isAiGenerated": true
+   }
+  },
+  "queued": false
  }
 ]
